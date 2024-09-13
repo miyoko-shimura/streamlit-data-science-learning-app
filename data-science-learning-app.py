@@ -84,7 +84,7 @@ elif menu == "Machine Learning":
     st.header("Basic Machine Learning")
     st.write("""
         In this section, you will learn how to build a basic machine learning model.
-        We'll implement a **Linear Regression** model on the **Iris** dataset to predict petal width based on petal length.
+        Let's implement a **Linear Regression** model on the **Iris** dataset to predict petal width based on petal length.
     """)
 
     # Load Iris dataset
