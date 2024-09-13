@@ -17,7 +17,7 @@ menu = st.sidebar.radio("Go to", ["Introduction", "Data Visualization", "Machine
 if menu == "Introduction":
     st.header("Welcome to the Data Science Learning App!")
     st.write("""
-        Hi there! This app is here to help you learn and explore key data science concepts in a fun, interactive way.
+        This app is here to help you learn and explore key data science concepts in a fun, interactive way.
 
         Here's what you'll get to experience:
         - 📊 **Data Visualization**: See how visualizing data can help uncover hidden patterns and insights.
@@ -123,8 +123,8 @@ elif menu == "Machine Learning":
         This is a basic example of how linear regression works in machine learning. The red line shows the model's predictions based on the input feature (petal length).
     """)
 
-# Footer: Developed by Miyoko Shimura with LinkedIn Link
-st.sidebar.markdown("---")
-st.sidebar.markdown("""
+# Footer in Main Menu
+st.markdown("---")
+st.markdown("""
 **Developed by [Miyoko Shimura](https://www.linkedin.com/in/miyoko-shimura/)**  
 """)
