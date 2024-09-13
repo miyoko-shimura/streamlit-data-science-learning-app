@@ -24,12 +24,12 @@ if menu == "Introduction":
         Explore the sections from the sidebar to get started!
     """)
 
-# 2. Data Visualization Section
+# 2. Data Visualization Section with Fundamental Analysis
 elif menu == "Data Visualization":
-    st.header("Data Visualization")
+    st.header("Data Visualization and Fundamental Analysis")
     st.write("""
         Data visualization helps in understanding the patterns, trends, and relationships within the data.
-        Here, we use the famous `Iris` dataset to demonstrate visualizations.
+        Here, we use the famous `Iris` dataset to demonstrate visualizations and basic data analysis.
     """)
 
     # Load Iris dataset
@@ -38,6 +38,22 @@ elif menu == "Data Visualization":
     # Display the dataset
     if st.checkbox("Show Dataset"):
         st.write(df)
+
+    # Basic statistics of the dataset
+    if st.checkbox("Show Basic Statistics"):
+        st.subheader("Basic Statistics")
+        st.write(df.describe())
+
+    # Correlation Matrix
+    if st.checkbox("Show Correlation Matrix"):
+        st.subheader("Correlation Matrix")
+        corr = df.corr()
+        st.write(corr)
+        
+        # Display correlation heatmap
+        fig, ax = plt.subplots()
+        sns.heatmap(corr, annot=True, cmap="coolwarm", ax=ax)
+        st.pyplot(fig)
 
     # Select feature for visualization
     st.subheader("Feature-wise Visualization")
