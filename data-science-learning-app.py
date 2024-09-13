@@ -15,7 +15,7 @@ menu = st.sidebar.radio("Go to", ["Introduction", "Data Visualization", "Machine
 
 # 1. Friendly Introduction Section
 if menu == "Introduction":
-    st.header("☺ Welcome to the Data Science Learning App!")
+    st.header("Welcome to the Data Science Learning App!")
     st.write("""
         Hi there! This app is here to help you learn and explore key data science concepts in a fun, interactive way.
 
@@ -23,7 +23,7 @@ if menu == "Introduction":
         - 📊 **Data Visualization**: See how visualizing data can help uncover hidden patterns and insights.
         - 🤖 **Machine Learning**: Get hands-on with a basic machine learning model using real-world data.
 
-        Ready to dive in? Use the sidebar to explore the sections. Don't worry—we'll guide you every step of the way. Let's get started! 🚀
+        Use the sidebar to explore the sections. Let's get started! 🚀
     """)
 
 # 2. Data Visualization Section with Iris Photo
