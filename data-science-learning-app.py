@@ -99,3 +99,6 @@ elif menu == "Machine Learning":
         This is a basic example of how linear regression works in machine learning. The red line shows the model's predictions based on the input feature (petal length).
     """)
 
+# Footer: Developed by Miyoko Shimura
+st.sidebar.markdown("---")
+st.sidebar.markdown("**Developed by Miyoko Shimura**")
