@@ -83,7 +83,7 @@ elif menu == "Data Visualization":
 elif menu == "Machine Learning":
     st.header("Basic Machine Learning")
     st.write("""
-        In this section, you will learn how to build a basic machine learning model.
+        This section explains how to build a basic machine learning model.
         Let's implement a **Linear Regression** model on the **Iris** dataset to predict petal width based on petal length.
     """)
 
