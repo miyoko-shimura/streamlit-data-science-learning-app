@@ -13,24 +13,31 @@ st.title("Data Science Learning App")
 st.sidebar.title("Navigation")
 menu = st.sidebar.radio("Go to", ["Introduction", "Data Visualization", "Machine Learning"])
 
-# 1. Introduction Section
+# 1. Friendly Introduction Section
 if menu == "Introduction":
-    st.header("Welcome to the Data Science Learning App!")
+    st.header("👋 Welcome to the Data Science Learning App!")
     st.write("""
-        In this app, you will learn about fundamental data science concepts, including:
-        - **Data Visualization**: Learn how to visualize and explore data.
-        - **Machine Learning**: Build simple machine learning models.
-        
-        Explore the sections from the sidebar to get started!
+        Hi there! Whether you're just starting your journey in data science or looking to refresh your skills, 
+        this app is here to help you learn and explore key data science concepts in a fun, interactive way.
+
+        Here's what you'll get to experience:
+        - 📊 **Data Visualization**: See how visualizing data can help uncover hidden patterns and insights.
+        - 🤖 **Machine Learning**: Get hands-on with a basic machine learning model using real-world data.
+
+        Ready to dive in? Use the sidebar to explore the sections. Don't worry—we'll guide you every step of the way. Let's get started! 🚀
     """)
 
-# 2. Data Visualization Section with Fundamental Analysis
+# 2. Data Visualization Section with Iris Photo
 elif menu == "Data Visualization":
     st.header("Data Visualization and Fundamental Analysis")
     st.write("""
         Data visualization helps in understanding the patterns, trends, and relationships within the data.
         Here, we use the famous `Iris` dataset to demonstrate visualizations and basic data analysis.
     """)
+
+    # Display an Iris flower photo
+    st.image("https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg", 
+             caption="Iris Flower", use_column_width=True)
 
     # Load Iris dataset
     df = sns.load_dataset('iris')
@@ -54,7 +61,7 @@ elif menu == "Data Visualization":
     ax.set_title(f'Distribution of {feature}')
     st.pyplot(fig)
 
-    # Additional visualizations: Boxplot, Violin Plot, Scatter Plot
+    # Additional visualizations: Boxplot and Scatter Plot
     st.subheader("Additional Visualizations")
 
     # 1. Boxplot to observe distributions and outliers
@@ -64,14 +71,7 @@ elif menu == "Data Visualization":
     ax.set_title(f'Boxplot of {feature} by Species')
     st.pyplot(fig)
 
-    # 2. Violin Plot: Combines boxplot and density plot
-    st.write("**Violin Plot**: Combines the boxplot and density plot.")
-    fig, ax = plt.subplots()
-    sns.violinplot(x='species', y=feature, data=df, ax=ax)
-    ax.set_title(f'Violin Plot of {feature} by Species')
-    st.pyplot(fig)
-
-    # 3. Scatter Plot to see relationships between two variables
+    # 2. Scatter Plot to see relationships between two variables
     st.write("**Scatter Plot**: Check the relationship between two numerical features.")
     feature_x = st.selectbox("Select X-axis feature:", df.columns[:-1], index=2)
     feature_y = st.selectbox("Select Y-axis feature:", df.columns[:-1], index=3)
@@ -124,6 +124,8 @@ elif menu == "Machine Learning":
         This is a basic example of how linear regression works in machine learning. The red line shows the model's predictions based on the input feature (petal length).
     """)
 
-# Footer: Developed by Miyoko Shimura
+# Footer: Developed by Miyoko Shimura with LinkedIn Link
 st.sidebar.markdown("---")
-st.sidebar.markdown("**Developed by Miyoko Shimura**")
+st.sidebar.markdown("""
+**Developed by [Miyoko Shimura](https://www.linkedin.com/in/miyoko-shimura/)**  
+""")
