@@ -1,4 +1,4 @@
-# 📊 Data Science Learning App
+# Data Science Learning App
 
 ## 🌐 Demo
 
