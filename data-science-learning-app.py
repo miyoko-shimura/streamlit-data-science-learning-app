@@ -36,7 +36,7 @@ elif menu == "Data Visualization":
 
     # Display an Iris flower photo
     st.image("https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg", 
-             caption="Iris Flower", use_column_width=True)
+             caption="Iris Flower from Wikimedia", use_column_width=True)
 
     # Load Iris dataset
     df = sns.load_dataset('iris')
