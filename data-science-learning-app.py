@@ -44,17 +44,6 @@ elif menu == "Data Visualization":
         st.subheader("Basic Statistics")
         st.write(df.describe())
 
-    # Correlation Matrix
-    if st.checkbox("Show Correlation Matrix"):
-        st.subheader("Correlation Matrix")
-        corr = df.corr()
-        st.write(corr)
-        
-        # Display correlation heatmap
-        fig, ax = plt.subplots()
-        sns.heatmap(corr, annot=True, cmap="coolwarm", ax=ax)
-        st.pyplot(fig)
-
     # Select feature for visualization
     st.subheader("Feature-wise Visualization")
     feature = st.selectbox("Select a feature for visualization:", df.columns[:-1])
@@ -65,11 +54,31 @@ elif menu == "Data Visualization":
     ax.set_title(f'Distribution of {feature}')
     st.pyplot(fig)
 
-    # Plot pairplot for the dataset
-    if st.checkbox("Show Pairplot (Relationships)"):
-        st.subheader("Pairplot (Relationship between features)")
-        fig = sns.pairplot(df, hue='species')
-        st.pyplot(fig)
+    # Additional visualizations: Boxplot, Violin Plot, Scatter Plot
+    st.subheader("Additional Visualizations")
+
+    # 1. Boxplot to observe distributions and outliers
+    st.write("**Boxplot**: Check distribution and outliers for the selected feature across species.")
+    fig, ax = plt.subplots()
+    sns.boxplot(x='species', y=feature, data=df, ax=ax)
+    ax.set_title(f'Boxplot of {feature} by Species')
+    st.pyplot(fig)
+
+    # 2. Violin Plot: Combines boxplot and density plot
+    st.write("**Violin Plot**: Combines the boxplot and density plot.")
+    fig, ax = plt.subplots()
+    sns.violinplot(x='species', y=feature, data=df, ax=ax)
+    ax.set_title(f'Violin Plot of {feature} by Species')
+    st.pyplot(fig)
+
+    # 3. Scatter Plot to see relationships between two variables
+    st.write("**Scatter Plot**: Check the relationship between two numerical features.")
+    feature_x = st.selectbox("Select X-axis feature:", df.columns[:-1], index=2)
+    feature_y = st.selectbox("Select Y-axis feature:", df.columns[:-1], index=3)
+    fig, ax = plt.subplots()
+    sns.scatterplot(x=df[feature_x], y=df[feature_y], hue=df['species'], ax=ax)
+    ax.set_title(f'Scatter Plot: {feature_x} vs {feature_y}')
+    st.pyplot(fig)
 
 # 3. Machine Learning Section
 elif menu == "Machine Learning":
